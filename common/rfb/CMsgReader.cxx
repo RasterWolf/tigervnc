@@ -117,6 +117,7 @@ bool CMsgReader::readMsg()
       break;
     case msgTypeEndOfContinuousUpdates:
       ret = readEndOfContinuousUpdates();
+      break;
     case msgTypeExtendedMouseSupport:
       ret = readSupportExtendedMouseButton();
       break;
