@@ -101,6 +101,7 @@ bool SMsgReader::readMsg()
     break;
   case msgTypePointerEventExt:
     ret = readPointerEvenExt();
+    break;
   case msgTypeClientCutText:
     ret = readClientCutText();
     break;
