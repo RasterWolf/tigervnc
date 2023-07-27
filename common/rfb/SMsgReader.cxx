@@ -99,6 +99,8 @@ bool SMsgReader::readMsg()
   case msgTypePointerEvent:
     ret = readPointerEvent();
     break;
+  case msgTypePointerEventExt:
+    ret = readPointerEvenExt();
   case msgTypeClientCutText:
     ret = readClientCutText();
     break;
@@ -281,6 +283,16 @@ bool SMsgReader::readPointerEvent()
   return true;
 }
 
+bool SMsgReader::readPointerEvenExt()
+{
+  if (!is->hasData(2 + 2 + 2))
+    return false;
+  int mask = is->readU16();
+  int x = is->readU16();
+  int y = is->readU16();
+  handler->pointerEvent(Point(x, y), mask);
+  return true;
+}
 
 bool SMsgReader::readClientCutText()
 {

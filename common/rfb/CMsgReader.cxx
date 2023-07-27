@@ -117,6 +117,8 @@ bool CMsgReader::readMsg()
       break;
     case msgTypeEndOfContinuousUpdates:
       ret = readEndOfContinuousUpdates();
+    case msgTypeExtendedMouseSupport:
+      ret = readSupportExtendedMouseButton();
       break;
     default:
       throw Exception("Unknown message type %d", currentMsgType);
@@ -451,6 +453,12 @@ bool CMsgReader::readFence()
 bool CMsgReader::readEndOfContinuousUpdates()
 {
   handler->endOfContinuousUpdates();
+  return true;
+}
+
+bool CMsgReader::readSupportExtendedMouseButton()
+{
+  handler->supportExtendedMouseButtons();
   return true;
 }
 
