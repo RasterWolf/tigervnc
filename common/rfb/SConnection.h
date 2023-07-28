@@ -95,7 +95,7 @@ namespace rfb {
 
     virtual void supportsQEMUKeyEvent();
 
-    virtual void supportExtendedMouseButtons();
+    virtual void supportsExtendedMouseButtons() override;
 
 
     // Methods to be overridden in a derived class
