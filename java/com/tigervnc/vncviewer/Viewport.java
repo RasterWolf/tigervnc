@@ -260,10 +260,10 @@ class Viewport extends JPanel implements ActionListener {
       //there are no masks for buttons 4 and 5 so we need to check for them only when pressed.
       if (tk.areExtraMouseButtonsEnabled() && e.getID() == MouseEvent.MOUSE_PRESSED) {
         //Back
-        if (MouseInfo.getNumberOfButtons() >= 4 && e.getButton() == 4)
+        if (MouseInfo.getNumberOfButtons() >= 4 && e.getButton() == 6)
           buttonMask |= 128;
         //Forward
-        if (MouseInfo.getNumberOfButtons() >= 5 && e.getButton() == 5)
+        if (MouseInfo.getNumberOfButtons() >= 5 && e.getButton() == 7)
           buttonMask |= 256;
       }
 
